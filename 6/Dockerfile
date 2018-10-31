@@ -1,6 +1,6 @@
 FROM openjdk:8
 
-ENV SONAR_VERSION=6.7 \
+ENV SONAR_VERSION=6.7.5 \
     SONARQUBE_HOME=/opt/sonarqube \
     # Database configuration
     # Defaults to using H2
@@ -49,11 +49,14 @@ RUN set -x \
     && curl -o sonar-css-plugin.jar -fSL https://binaries.sonarsource.com/Distribution/sonar-css-plugin/sonar-css-plugin-1.0.2.611.jar \
     && curl -o sonar-groovy-plugin.jar -fSL https://github.com/pmayweg/sonar-groovy/releases/download/1.6-RC1/sonar-groovy-plugin-1.6-RC1.jar \
     && curl -o sonar-yaml-plugin.jar -fSL https://github.com/sbaudoin/sonar-yaml/releases/download/v1.1.0/sonar-yaml-plugin-1.1.0.jar \
-    && curl -o sonar-github-plugin.jar -fSL https://github.com/gabrie-allaigre/sonar-gitlab-plugin/releases/download/3.0.2/sonar-gitlab-plugin-3.0.2.jar \
-    && curl -o sonar-auth-github-plugin.jar -fSL https://binaries.sonarsource.com/Distribution/sonar-auth-github-plugin/sonar-auth-github-plugin-1.4.0.695.jar \
+    && curl -o sonar-github-plugin.jar -fSL http://central.maven.org/maven2/org/sonarsource/github/sonar-github-plugin/1.4.2.1027/sonar-github-plugin-1.4.2.1027.jar \
+    && curl -o sonar-auth-github-plugin.jar -fSL https://binaries.sonarsource.com/Distribution/sonar-auth-github-plugin/sonar-auth-github-plugin-1.3.jar \
     && curl -o sonar-checkstyle-plugin.jar -fSL https://github.com/checkstyle/sonar-checkstyle/releases/download/4.11/checkstyle-sonar-plugin-4.11.jar \
     && curl -o sonar-findbugs-plugin.jar -fSL https://github.com/spotbugs/sonar-findbugs/releases/download/3.8.0/sonar-findbugs-plugin-3.8.0.jar \
     && curl -o sonar-jdepend-plugin.jar -fSL https://github.com/willemsrb/sonar-jdepend-plugin/releases/download/sonar-jdepend-plugin-1.1.1/sonar-jdepend-plugin-1.1.1.jar \
+    && curl -o sonar-jacoco-plugin.jar -fSL https://binaries.sonarsource.com/Distribution/sonar-jacoco-plugin/sonar-jacoco-plugin-1.0.1.143.jar \
+    && curl -o sonar-scm-git-plugin.jar -fSL https://binaries.sonarsource.com/Distribution/sonar-scm-git-plugin/sonar-scm-git-plugin-1.4.1.1128.jar \
+    && curl -o sonar-html-plugin.jar -fSL https://binaries.sonarsource.com/Distribution/sonar-html-plugin/sonar-html-plugin-3.0.0.1411.jar \
     && mv *.jar sonarqube/extensions/plugins/
 
 VOLUME "$SONARQUBE_HOME/data"
