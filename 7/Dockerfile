@@ -43,7 +43,7 @@ RUN set -x \
     && chown -R sonarqube:sonarqube sonarqube \
     && rm sonarqube.zip* \
     && rm -rf $SONARQUBE_HOME/bin/* \
-    && curl -o sonar-groovy-plugin.jar -fSL https://github.com/musketyr/sonar-groovy/releases/download/1.6-RC5/sonar-groovy-plugin-1.6-RC5.jar \
+    && curl -o sonar-groovy-plugin.jar -fSL https://github.com/musketyr/sonar-groovy/releases/download/1.6-RC6/sonar-groovy-plugin-1.6-RC6.jar \
     && curl -o sonar-yaml-plugin.jar -fSL https://github.com/sbaudoin/sonar-yaml/releases/download/v1.1.0/sonar-yaml-plugin-1.1.0.jar \
     && curl -o sonar-github-plugin.jar -fSL https://github.com/gabrie-allaigre/sonar-gitlab-plugin/releases/download/3.0.2/sonar-gitlab-plugin-3.0.2.jar \
     && curl -o sonar-auth-github-plugin.jar -fSL https://binaries.sonarsource.com/Distribution/sonar-auth-github-plugin/sonar-auth-github-plugin-1.4.0.695.jar \
