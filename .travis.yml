@@ -1,5 +1,7 @@
 language: groovy
 
+script: echo 'Nothing to do'
+
 before_deploy: cd aws-eb && ./gradlew buildZip
 
 deploy:
