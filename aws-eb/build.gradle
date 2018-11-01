@@ -1,0 +1,13 @@
+task sourcesForRelease(type: Copy) {
+    from 'src/main/eb'
+    into 'build/eb'
+    doLast {
+        ant.replace(file: 'build/eb/Dockerrun.aws.json', token: '@VERSION@', value: System.getenv('TRAVIS_TAG') ?: '6')
+    }
+}
+
+task buildZip(type: Zip, dependsOn: sourcesForRelease) {
+    archiveName = 'docker-sonarqube.zip'
+    from 'build/eb'
+    destinationDir = file('build/archives')
+}

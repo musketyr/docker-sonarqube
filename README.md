@@ -1,7 +1,12 @@
-# About this Repo
+# Groovy Optimized Sonarqube Docker Image
 
-This is the Git repo of the official Docker image for [SonarQube](https://registry.hub.docker.com/_/sonarqube/). See the Hub page for the full readme on how to use the Docker image and for information regarding contributing and issues.
+Sonarqube docker optimized for evaluating Groovy projects
 
-The full readme is generated over in [docker-library/docs](https://github.com/docker-library/docs), specifically in [docker-library/docs/sonarqube](https://github.com/docker-library/docs/tree/master/sonarqube).
+```
+docker run -d -p 9000:9000 --name sonarqube musketyr/sonarqube:6
 
-[![Build Status](https://travis-ci.org/SonarSource/docker-sonarqube.svg)](https://travis-ci.org/SonarSource/docker-sonarqube)
+```
+
+Contains ready-to-deploy Elastic Beanstalk archive ([see releases](https://github.com/musketyr/docker-sonarqube/releases))
+
+Uses [forked version of Sonar Groovy Plugin](https://github.com/musketyr/sonar-groovy).

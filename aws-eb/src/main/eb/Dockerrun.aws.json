@@ -1,0 +1,15 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "musketyr/sonarqube:@VERSION@",
+    "Update": "true"
+  },
+  "Ports": [
+    {
+      "ContainerPort": "9000"
+    },
+    {
+      "ContainerPort": "9092"
+    }
+  ]
+}
