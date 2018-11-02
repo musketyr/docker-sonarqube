@@ -1,6 +1,7 @@
 FROM openjdk:8
 
 ENV SONAR_VERSION=6.7.5 \
+    SONAR_GROOVY_VERSION=1.6-RC7 \
     SONARQUBE_HOME=/opt/sonarqube \
     # Database configuration
     # Defaults to using H2
@@ -47,7 +48,7 @@ RUN set -x \
     && curl -o sonar-js-plugin.jar -fSL https://binaries.sonarsource.com/Distribution/sonar-javascript-plugin/sonar-javascript-plugin-5.0.0.6962.jar \
     && curl -o sonar-ts-plugin.jar -fSL https://binaries.sonarsource.com/Distribution/sonar-typescript-plugin/sonar-typescript-plugin-1.8.0.3332.jar \
     && curl -o sonar-css-plugin.jar -fSL https://binaries.sonarsource.com/Distribution/sonar-css-plugin/sonar-css-plugin-1.0.2.611.jar \
-    && curl -o sonar-groovy-plugin.jar -fSL https://github.com/musketyr/sonar-groovy/releases/download/1.6-RC6/sonar-groovy-plugin-1.6-RC6.jar \
+    && curl -o sonar-groovy-plugin.jar -fSL https://github.com/musketyr/sonar-groovy/releases/download/$SONAR_GROOVY_VERSION/sonar-groovy-plugin-$SONAR_GROOVY_VERSION.jar \
     && curl -o sonar-yaml-plugin.jar -fSL https://github.com/sbaudoin/sonar-yaml/releases/download/v1.1.0/sonar-yaml-plugin-1.1.0.jar \
     && curl -o sonar-github-plugin.jar -fSL http://central.maven.org/maven2/org/sonarsource/github/sonar-github-plugin/1.4.2.1027/sonar-github-plugin-1.4.2.1027.jar \
     && curl -o sonar-auth-github-plugin.jar -fSL https://binaries.sonarsource.com/Distribution/sonar-auth-github-plugin/sonar-auth-github-plugin-1.3.jar \
