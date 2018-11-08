@@ -1,7 +1,7 @@
 FROM openjdk:8
 
 ENV SONAR_VERSION=6.7.5 \
-    SONAR_GROOVY_VERSION=1.6-RC7 \
+    SONAR_GROOVY_VERSION=1.6-RC8 \
     SONARQUBE_HOME=/opt/sonarqube \
     # Database configuration
     # Defaults to using H2

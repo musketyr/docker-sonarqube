@@ -2,7 +2,9 @@ language: groovy
 
 script: echo 'Nothing to do'
 
-before_deploy: cd aws-eb && ./gradlew buildZip
+before_deploy:
+  - cd aws-eb
+  - ./gradlew clean buildZip
 
 deploy:
   provider: releases

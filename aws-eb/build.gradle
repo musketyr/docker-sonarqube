@@ -6,6 +6,10 @@ task sourcesForRelease(type: Copy) {
     }
 }
 
+task clean(type: Delete) {
+    delete 'build'
+}
+
 task buildZip(type: Zip, dependsOn: sourcesForRelease) {
     archiveName = 'docker-sonarqube.zip'
     from 'build/eb'
